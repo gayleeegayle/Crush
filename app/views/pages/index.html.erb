@@ -1,0 +1,16 @@
+<style>
+	.header, .navigation, .footer {
+		display: none;
+	}
+</style>
+
+<div id="container">
+	<div id="text">
+		<h1>MyCrushes!</h1>
+		<h3><i>Gotta know 'em all, admire 'em all, stalk 'em all!</i></h3>
+		<%= link_to "By Course", courses_path, class: "btn btn-warning btn-sm outline" %>
+		<%= link_to "By Crush", crushes_path, class: "btn btn-warning btn-sm outline" %>
+		<%= link_to "By Schedule", schedules_path, class: "btn btn-warning btn-sm outline" %>
+		<%= link_to "View Summary ♥", summary_path, class: "btn btn-danger btn-sm sharp" %>
+	</div>
+</div>

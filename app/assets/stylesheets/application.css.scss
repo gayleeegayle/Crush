@@ -1,0 +1,394 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ * {
+ 	font-family: 'robotoregular';
+ }
+
+.header {
+	background-color: #C1175A;
+	height: 10px;
+}
+
+ .navigation {
+ 	padding: 20px 20px 15px 75px;
+ 	background-color: #E91E63;
+	box-shadow:  0 4px 10px -2px rgba(0, 0, 0, 0.3);
+ }
+
+ .navigation .btn {
+ 	margin-right: 1px;
+ }
+
+.navigation * {
+	display: inline-block;
+}
+
+.navigation b { /*MyCrushes!*/
+	margin-right: 10px;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
+/*
+.footer {
+	bottom: 0px;
+	margin: 10px 0px 0px 0px;
+ 	padding: 13px 20px 0px 75px;
+ 	background-color: #E91E63;
+}
+*/
+
+.center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.center h1 {
+	color: #212121;
+}
+
+.scrollup {
+	display: none;
+    width: 75px;
+    height: 75px;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    cursor: pointer;
+    text-indent: -9999px; /*hide my "Scroll" text*/
+    background: url('arrowup.png') no-repeat;
+}
+
+.row {
+	margin-right: 0px; /*Remove weird horizontal scrolling after adding the .scrollup??*/
+}
+
+/******************************************************
+    SUMMARY GOODIES
+******************************************************/
+.summary-course {
+	color: #393430; /*Medj gray black*/
+}
+
+
+/******************************************************
+    OVERRIDE THAT WHITE BOX BELOW ALERTS
+******************************************************/
+.alert {
+	margin-bottom: 0px;
+}
+
+.alert p {
+	margin: 0px;
+}
+
+/******************************************************
+	TABLE MATTERS
+******************************************************/
+
+.tableh th {
+	background-color: #DDDDDD;
+}
+
+.tdspace {
+	padding: 20px;
+}
+
+.tdspace .btn {
+	width: 100px;
+	margin: 10px 5px 10px 0px;
+}
+
+
+/******************************************************
+	SIMPLEFORM
+******************************************************/
+
+.simple_form label {
+  float: left;
+  margin-right: 10px;
+  /*margin-top: 5px;*/
+  /*width: 150px;*/
+  /*text-align: right;*/
+}
+
+
+
+/******************************************************
+	SET UP BUTTONS
+******************************************************/
+
+.btn {
+	padding: 14px 24px;
+	border: 0 none;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+	outline: 0 none;
+}
+
+/******************************************************
+	STANDARD BUTTONS
+******************************************************/
+
+.btn-default {
+	border: 2px solid #C4C4C4;
+	color: #737373;
+	padding: 12px 22px;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+	background: #FFFFFF;
+	border-color: #949494;
+	color: #737373;
+}
+.btn-default:active, .btn-default.active {
+	border-color: #737373;
+	box-shadow: none;
+}
+.btn-primary {
+	background: #0099cc;
+	color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+	background: #33a6cc;
+}
+.btn-primary:active, .btn-primary.active {
+	background: #007299;
+	box-shadow: none;
+}
+.btn-success {
+	background: #00bf6f;
+	color: #ffffff;
+}
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
+	background: #39bf87;
+}
+.btn-success:active, .btn-success.active {
+	background: #008c52;
+	box-shadow: none;
+}
+.btn-info {
+	background: #31cde8;
+	color: #ffffff;
+}
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
+	background: #5fd4e8;
+}
+.btn-info:active, .btn-info.active {
+	background: #35a2b5;
+	box-shadow: none;
+}
+.btn-warning {
+	background: #eb8f34;
+	color: #ffffff;
+}
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open > .dropdown-toggle.btn-warning {
+	background: #eba259;
+}
+.btn-warning:active, .btn-warning.active {
+	background: #b87430;
+	box-shadow: none;
+}
+.btn-danger {
+	background: #f25454;
+	color: #ffffff;
+}
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open > .dropdown-toggle.btn-danger {
+	background: #f26d6d;
+}
+.btn-danger:active, .btn-danger.active {
+	background: #bf4343;
+	box-shadow: none;
+}
+
+/******************************************************
+	SHARP BUTTONS
+******************************************************/
+
+.btn.sharp {
+	border-radius: 0;
+}
+
+.btn-default.sharp {
+	border-color: #FFFFFF;
+}
+
+.btn-default.sharp:hover {
+	background: #E8E8E8;
+	border-color: #E8E8E8;
+	color: #737373;
+}
+
+.btn-default.sharp:active {
+	background: #CCCCCC;
+	border-color: #CCCCCC;
+}
+
+/******************************************************
+	OUTLINE BUTTONS
+******************************************************/
+.btn.outline {
+	background: none;
+	padding: 12px 22px;
+}
+.btn-primary.outline {
+	border: 2px solid #0099cc;
+	color: #0099cc;
+}
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+	color: #33a6cc;
+	border-color: #33a6cc;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+	border-color: #007299;
+	color: #007299;
+	box-shadow: none;
+}
+.btn-success.outline {
+	border: 2px solid #00bf6f;
+	color: #00bf6f;
+}
+.btn-success.outline:hover, .btn-success.outline:focus, .btn-success.outline:active, .btn-success.outline.active, .open > .dropdown-toggle.btn-success {
+	border-color: #39bf87;
+	color: #39bf87;
+}
+.btn-success.outline:active, .btn-success.outline.active {
+	border-color: #008c52;
+	color: #008c52;
+	box-shadow: none;
+}
+.btn-info.outline {
+	border: 2px solid #31cde8;
+	color: #31cde8;
+}
+.btn-info.outline:hover, .btn-info.outline:focus, .btn-info.outline:active, .btn-info.outline.active, .open > .dropdown-toggle.btn-info {
+	border-color: #5fd4e8;
+	color: #5fd4e8;
+}
+.btn-info.outline:active, .btn-info.outline.active {
+	border-color: #35a2b5;
+	color: #35a2b5;
+	box-shadow: none;
+}
+.btn-warning.outline {
+	border: 2px solid #eb8f34;
+	color: #eb8f34;
+	background: #FDFDE7; /*super light yellow*/
+}
+.btn-warning.outline:hover, .btn-warning.outline:focus, .btn-warning.outline:active, .btn-warning.outline.active, .open > .dropdown-toggle.btn-warning {
+	border-color: #eba259;
+	color: #eba259;
+	background: #FDF4E1; /*super light orange*/
+}
+.btn-warning.outline:active, .btn-warning.outline.active {
+	border-color: #b87430;
+	color: #b87430;
+	box-shadow: none;
+}
+.btn-danger.outline {
+	border: 2px solid #f25454;
+	color: #f25454;
+}
+.btn-danger.outline:hover, .btn-danger.outline:focus, .btn-danger.outline:active, .btn-danger.outline.active, .open > .dropdown-toggle.btn-danger {
+	border-color: #f26d6d;
+	color: #f26d6d;
+}
+.btn-danger.outline:active, .btn-danger.outline.active {
+	border-color: #bf4343;
+	color: #bf4343;
+	box-shadow: none;
+}
+
+/******************************************************
+	RAISED BUTTONS
+******************************************************/
+
+.btn-primary.raised {
+	box-shadow: 0 3px 0 0 #007299;
+}
+.btn-primary.raised:active, .btn-primary.raised.active {
+	background: #33a6cc;
+	box-shadow: none;
+	margin-bottom: -3px;
+	margin-top: 3px;
+}
+.btn-success.raised {
+	box-shadow: 0 3px 0 0 #008c52;
+}
+.btn-success.raised:active, .btn-success.raised.active {
+	background: #39bf87;
+	box-shadow: none;
+	margin-bottom: -3px;
+	margin-top: 3px;
+}
+.btn-info.raised {
+	box-shadow: 0 3px 0 0 #35a2b5;
+}
+.btn-info.raised:active, .btn-info.raised.active {
+	background: #5fd4e8;
+	box-shadow: none;
+	margin-bottom: -3px;
+	margin-top: 3px;
+}
+.btn-warning.raised {
+	box-shadow: 0 3px 0 0 #b87430;
+}
+.btn-warning.raised:active, .btn-warning.raised.active {
+	background: #eba259;
+	box-shadow: none;
+	margin-bottom: -3px;
+	margin-top: 3px;
+}
+.btn-danger.raised {
+	box-shadow: 0 3px 0 0 #bf4343;
+}
+.btn-danger.raised:active, .btn-danger.raised.active {
+	background: #f26d6d;
+	box-shadow: none;
+	margin-bottom: -3px;
+	margin-top: 3px;
+}
+
+/******************************************************
+	BUTTON SIZING
+******************************************************/
+
+.btn-xs, .btn-group-xs > .btn {
+	padding: 2px 6px;
+}
+.btn-sm, .btn-group-sm > .btn {
+	padding: 8px 12px;
+}
+.btn-lg {
+	padding: 20px 40px;
+	border-radius: 4px;
+}
+.btn-xs.btn-default, .btn-xs.outline {
+	padding: 0px 4px;
+}
+.btn-sm.btn-default, .btn-sm.outline {
+	padding: 6px 10px;
+}
+.btn-lg.btn-default, .btn-lg.outline {
+	padding: 18px 38px;
+}

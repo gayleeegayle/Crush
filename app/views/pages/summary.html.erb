@@ -1,0 +1,29 @@
+<center><h1>Summary ♥</h1></center>
+
+<div class="row">
+	<div class="col-md-9 center">
+		<% all_courses = Course.all %>
+		<% all_courses.each do |c| %>
+			<table class="table table-bordered">
+				<center>
+					<h3 class="summary-course"><%= c.name %> (<%= c.code %>)</h3>
+				</center>
+				<tr class="tableh">
+					<th>Crush's First Name</th>
+					<th>Crush's Last Name</th>
+					<th>Gender</th>
+					<th>Schedule</th>
+				</tr>
+				<% filtered_crushes = Crush.where(course_id: c) %>
+				<% filtered_crushes.each do |bae| %>
+					<tr>
+						<td><%= bae.first_name %></td>
+						<td><%= bae.last_name %></td>
+						<td><%= bae.gender %></td>
+						<td><%= link_to "View Schedule", crush_path(bae.id), class: "btn btn-xs btn-info" %>
+					</tr>
+				<% end %>
+			</table>
+		<% end %>
+	</div> 
+</div>

@@ -1,0 +1,58 @@
+<div class="row">
+	<div class="col-md-9 center">
+		<center><h1>All Crushes</h1>
+		<%= link_to "Add a Crush", new_crush_path, class: "btn btn-warning btn-xs" %>
+		</center>
+
+		<% male_crushes = Crush.where(gender: "Male") %>
+		<% female_crushes = Crush.where(gender: "Female") %>
+
+		<center><h3>Male Crushes</h3></center>
+		<table class="table table-bordered">
+			<tr class="tableh">
+				<th>Crush's First Name</th>
+				<th>Crush's Last Name</th>
+				<th>Course ID</th>
+				<th>Number of Schedules</th>
+				<th>Actions</th>
+			</tr>
+			<% male_crushes.each do |c| %>
+				<tr>
+					<td><%= c.first_name %></td>
+					<td><%= c.last_name %></td>
+					<td><%= link_to c.course.code, course_path(c.course.id) %></td>
+					<td><%= c.schedules.count %></td>
+					<td>
+						<%= link_to "View Profile", crush_path(c.id), class: "btn btn-xs btn-info" %>
+						<%= link_to "Edit Profile", edit_crush_path(c.id), class: "btn btn-xs btn-success" %>
+						<%= link_to "Delete Crush", crush_path(c.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger" %>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+
+		<center><h3>Female Crushes</h3></center>
+		<table class="table table-bordered">
+			<tr class="tableh">
+				<th>Crush's First Name</th>
+				<th>Crush's Last Name</th>
+				<th>Course ID</th>
+				<th>Number of Schedules</th>
+				<th>Actions</th>
+			</tr>
+			<% female_crushes.each do |c| %>
+				<tr>
+					<td><%= c.first_name %></td>
+					<td><%= c.last_name %></td>
+					<td><%= link_to c.course.code, course_path(c.course.id) %></td>
+					<td><%= c.schedules.count %></td>
+					<td>
+						<%= link_to "View Profile", crush_path(c.id), class: "btn btn-xs btn-info" %>
+						<%= link_to "Edit Profile", edit_crush_path(c.id), class: "btn btn-xs btn-success" %>
+						<%= link_to "Delete Crush", crush_path(c.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger" %>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+	</div> 
+</div>

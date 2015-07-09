@@ -1,0 +1,23 @@
+<br>
+<div class="row">
+	<div class="col-md-4 center">
+		<table class="table table-bordered">
+			<tr class="tableh">
+				<th><center><h1>New Course Record</h1></center></th>
+			</tr>
+			<tr>
+				<td class="tdspace">
+					<br>
+					<%= simple_form_for(@course) do |f| %>
+						<%= f.input :name, label: "Course Name" %><br>
+						<%= f.input :code, label: "Course Code" %><br>
+						<center>
+							<%= f.submit :save, class: "btn btn-success btn-sm raised" %>
+							<%= link_to "Cancel", :back, class: "btn btn-danger btn-sm raised" %>
+						</center>
+					<% end %>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

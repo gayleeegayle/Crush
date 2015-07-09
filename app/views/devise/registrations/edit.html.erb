@@ -1,0 +1,53 @@
+<br>
+<div class="row">
+  <div class="col-md-5 center">
+    <table class="table table-bordered">
+      <tr class="tableh">
+        <th>
+          <center><h1>Edit <%= resource_name.to_s.humanize %></h1></center>
+        </th>
+      </tr>
+      <tr>
+        <td class="tdspace">
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true %><br>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+            <% end %>
+
+            <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %><br>
+            <%= f.input :password_confirmation, required: false %><br>
+            <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %><br>
+            </div>
+
+          <center>
+            <%= f.button :submit, "Update", class: "tdspace btn btn-success btn-sm raised" %>
+          </center>
+          <% end %>
+        </td>
+        </tr>
+      </table>
+
+    <table class="table table-bordered">
+      <tr class="tableh">
+        <th>
+            <center><h2>Cancel My Account</h2></center>
+        </th>
+      <tr>
+        <td class="tdspace">
+          <br>
+          Unhappy? Don't want to know, admire, or stalk your crushes anymore? Or want to take a break from the cycle of hope, expectations, and disappointment for a while?<br><br>
+          <center>
+            <%= link_to "Delete", registration_path(resource_name), data: { confirm: "Are you sure you want to take the path towards the halaman life?" }, method: :delete, class: "btn btn-success btn-sm raised" %>
+
+            <%= link_to "Back", :back, class: "btn btn-danger btn-sm raised" %>
+          </center>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

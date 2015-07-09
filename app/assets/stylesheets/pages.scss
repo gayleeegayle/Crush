@@ -1,0 +1,65 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+ * {
+ 	font-family: 'robotoregular';
+ }
+
+html #container { /*Flexible background; adjusts ratio to window size */
+  background: url(heartbook.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#container {
+	width: 100%;
+	height: 100%;
+	/*Need these to center the splash text*/
+	position: fixed;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+#text {
+	/*Appearance*/
+	width: 625px;
+	height: 250px;
+	box-shadow: 0px 0px 20px #FAEEDE;
+	background-color: rgba(252,252,252,0.70);
+
+	/*Positioning*/
+	position: fixed;
+  	top: 50%;
+  	left: 50%;
+ 	transform: translate(-50%, -50%);
+
+	/* OLD CODE
+	padding: 10px 10px 5px 10px;
+	clear: both;
+	text-align: center;
+	vertical-align: middle;
+	*/
+}
+
+#container h1 {
+	font-size: 95px;
+	color: #E91E63;
+
+    /*DEFAULT TEXT-STROKE
+    color: white;
+  	text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+     */
+}
+
+#container h3 {
+	color: #727272;
+}

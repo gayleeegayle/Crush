@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyCrushes! Application</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<!-- NAVIGATION BAR -->
+		<% if current_page?("pages#index")%>
+				<!-- Don't display navigation bar -->
+		<% else %>
+			<div class="row header"></div>
+			<div class="row navigation">
+				<b>MyCrushes!</b>
+				<%= link_to "Home", root_path, class: "btn btn-warning btn-sm sharp" %>
+				<%= link_to "All Courses", courses_path, class: "btn btn-default btn-sm sharp" %>
+				<%= link_to "All Crushes", crushes_path, class: "btn btn-default btn-sm sharp" %>
+				<%= link_to "All Schedules", schedules_path, class: "btn btn-default btn-sm sharp" %>
+				<%= link_to "Summary", summary_path, class: "btn btn-default btn-sm sharp" %>
+				<% if user_signed_in? %>
+				 	<%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-warning btn-sm sharp' %>
+				 	<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-warning btn-sm sharp'  %>
+				  	<font color=white>Logged in as <strong><%= current_user.email %></strong>.</font>
+				<% else %>
+				  <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-warning btn-sm sharp'  %>
+				  <%= link_to "Login", new_user_session_path, :class => 'btn btn btn-warning btn-sm sharp'  %>
+				<% end %>
+			</div>
+		<% end %>
+	<!-- BUTTON TO SCROLL UP -->
+	<a href="#" class="scrollup">Scroll</a>
+	
+	<!-- DEVISE GEM ADDITIONS -->
+	<% if notice %>
+  		<p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+  		<p class="alert alert-danger"><%= alert %></p>
+	<% end %>
+
+<%= yield %>
+
+	<!-- FOOTER - SOMEDAY -->
+	<!--- div class="row footer"></div> -->
+</body>
+</html>

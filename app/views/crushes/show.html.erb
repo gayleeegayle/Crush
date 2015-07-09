@@ -1,0 +1,31 @@
+<center>
+	<h1><%= @crush.first_name %> <%= @crush.last_name %></h1>
+	<h4><%= @crush.course.name %> (<%= @crush.course.code %>)</h4>
+	<%= link_to "Add a Schedule", new_schedule_path(crush_id: @crush.id), class: "btn btn-warning btn-xs" %>
+</center>
+
+<br>
+
+<div class="row">
+	<div class="col-md-9 center">
+		<table class="table table-bordered table-striped">
+			<tr class="tableh">
+				<th>Start Date</th>
+				<th>End Date</th>
+				<th>Location</th>
+				<th>Actions</th>
+			</tr>
+			<% @crush.schedules.each do |s| %>
+				<tr>
+					<td><%= s.start_date %></td>
+					<td><%= s.end_date %></td>
+					<td><%= s.location %></td>
+					<td>
+						<%= link_to "Edit Schedule", edit_schedule_path(s.id), class: "btn btn-xs btn-default" %>
+						<%= link_to "Delete Schedule", schedule_path(s.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger" %>	
+					</td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<br>
+<div class="row">
+	<div class="col-md-4 center">
+		<table class="table table-bordered">
+			<tr class="tableh">
+				<th><center><h1>Edit Crush Record</h1></center></th>
+			</tr>
+			<tr>
+				<td class="tdspace">
+					<br>
+					<%= simple_form_for(@crush) do |f| %>
+						<%= f.input :first_name %><br>
+						<%= f.input :last_name %><br>
+						<%= f.association :course %><br>
+						<%= f.input :gender, :collection => ['Male', 'Female'], include_blank: false %><br>
+						<center>
+							<%= f.submit :save, class: "btn btn-success btn-sm raised" %>
+							<%= link_to "Cancel", :back, class: "btn btn-danger btn-sm raised" %>
+						</center>
+					<% end %>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

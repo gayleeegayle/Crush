@@ -1,0 +1,24 @@
+<br>
+<div class="row">
+	<div class="col-md-5 center">
+		<table class="table table-bordered">
+			<tr class="tableh">
+				<th><center><h1>New Schedule Record</h1></center></th>
+			</tr>
+			<tr>
+				<td class="tdspace">
+					<%= simple_form_for(@schedule) do |f| %>
+						<%= f.association :crush %><br>
+						<%= f.input :start_date, error: 'Must be earlier than the end date.' %><br>
+						<%= f.input :end_date, error: 'Must be later than the start date.' %><br>
+						<%= f.input :location %><br>
+						<center>
+							<%= f.submit :save, class: "btn btn-success btn-sm raised" %>
+							<%= link_to "Cancel", :back, class: "btn btn-danger btn-sm raised" %>
+						</center>
+					<% end %>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

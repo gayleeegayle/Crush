@@ -1,0 +1,32 @@
+<center>
+	<h1><%= @course.name %></h1>
+	<h4><%= @course.code %></h4>
+	<%= link_to "Add a Crush", new_crush_path(course_id: @course.id), class: "btn btn-warning btn-xs" %>
+</center>
+
+<br>
+
+<div class="row">
+	<div class="col-md-9 center">
+		<table class="table table-bordered table-striped">
+			<tr class="tableh">
+				<th>Crush's First Name</th>
+				<th>Crush's Last Name</th>
+				<th>Number of Schedules</th>
+				<th>Actions</th>
+			</tr>
+			<% @course.crushes.each do |crushie| %>
+				<tr>
+					<td><%= crushie.first_name %></td>
+					<td><%= crushie.last_name %></td>
+					<td><%= crushie.schedules.count %></td>
+					<td>
+						<%= link_to "View Schedule", crush_path(crushie.id), class: "btn btn-xs btn-info" %>
+						<%= link_to "Edit Profile", edit_crush_path(crushie.id), class: "btn btn-xs btn-success" %>
+						<%= link_to "Delete Crush", crush_path(crushie.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger" %>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
